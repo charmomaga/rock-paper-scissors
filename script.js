@@ -26,10 +26,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = prompt("Rock, Paper or Scissors?");
+const playerSelection = prompt("Rock, Paper, or Scissors:");
 const computerSelection = getComputerChoice();
 const result = playRound(playerSelection, computerSelection);
-
 console.log(result);
 
 // new fn called game(), use previous fn inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end

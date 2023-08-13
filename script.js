@@ -30,7 +30,7 @@ function game() {
     // loop for 5 rounds
     for (let round = 1; round <= 5; round++) {
         const playerSelection = prompt(
-            "Round ${round}: Rock, Paper, or Scissors:"
+            "Round " + round + ": Rock, Paper, or Scissors:"
         );
         const computerSelection = getComputerChoice();
         const roundResult = playRound(playerSelection, computerSelection);

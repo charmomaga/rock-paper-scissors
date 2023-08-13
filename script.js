@@ -28,7 +28,7 @@ function game() {
     let computerScore = 0;
 
     // loop for 5 rounds
-    for (let round = 1; round < 0; round++) {
+    for (let round = 1; round <= 5; round++) {
         const playerSelection = prompt(
             "Round ${round}: Rock, Paper, or Scissors:"
         );

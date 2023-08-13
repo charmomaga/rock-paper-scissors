@@ -2,4 +2,4 @@
 
 ## Live Preview
 
-[Play Rock Paper Scissors](charmomaga.github.io/rock-paper-scissors/)
+[Play Rock Paper Scissors](https://charmomaga.github.io/rock-paper-scissors/)

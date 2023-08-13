@@ -41,7 +41,7 @@ function game() {
             console.log("You win round ${round}!");
         } else if (roundResult === "computer") {
             computerScore++;
-            console.log("Computer wins round {$round}!");
+            console.log("Computer wins round ${round}!");
         } else {
             console.log("Round ${round} is a tie.");
         }

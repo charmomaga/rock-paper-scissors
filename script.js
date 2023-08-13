@@ -1,35 +1,61 @@
-// randomly return rock, paper or scissors
+// Function to randomly return computer's choice
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
 
-// fn that plays a single round of RPS that takes 2 parameters playerSelection and computerSelection
-// return a string that declares the winner
-// You Lose! Paper beats Rock
-// playerSelection case-insensitive
-// return results of fn call
+// function to play a single round of the game and determine the winner
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
 
     if (playerSelection === computerSelection) {
-        return "It's a tie! Nobody wins.";
+        return "tie";
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
-        return "You win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}.";
+        return "player";
     } else {
-        return "You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}.";
+        return "computer";
     }
 }
 
-const playerSelection = prompt("Rock, Paper, or Scissors:");
-const computerSelection = getComputerChoice();
-const result = playRound(playerSelection, computerSelection);
-console.log(result);
+// Function to run the game 5x
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
 
-// new fn called game(), use previous fn inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end
-// use prompt() to get input from user
+    // loop for 5 rounds
+    for (let round = 1; round < 0; round++) {
+        const playerSelection = prompt(
+            "Round ${round}: Rock, Paper, or Scissors:"
+        );
+        const computerSelection = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerSelection);
+
+        // Determine round outcome and update scores
+        if (roundResult === "player") {
+            playerScore++;
+            console.log("You win round ${round}!");
+        } else if (roundResult === "computer") {
+            computerScore++;
+            console.log("Computer wins round {$round}!");
+        } else {
+            console.log("Round ${round} is a tie.");
+        }
+    }
+
+    // Declare the winner at the end of the game
+    if (playerScore > computerScore) {
+        console.log("You win the game!");
+    } else if (computerScore > playerScore) {
+        console.log("Computer wins the game!");
+    } else {
+        console.log("The game is a tie.");
+    }
+}
+
+// Call the game function to start playing
+game();
